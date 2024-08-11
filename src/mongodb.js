@@ -22,4 +22,4 @@ const LogInSchema = new mongoose.Schema({
 
 const collection = new mongoose.model("Collection1", LogInSchema)
 
-moduule.exports = collection
+module.exports = collection
