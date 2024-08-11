@@ -31,6 +31,23 @@ await collection.insertMany([data])
 res.render("home")
 })
 
+app.post("/login", async(req, res)=> {
+
+   try {
+    const check = await collection.findOne({name: req.body.name})
+
+    if (check.password === req.body.password){
+        res.render("home")
+    }
+    else {
+        res.send("Incorrect User or Password")
+    }
+   }
+   catch {}
+   res.send("Username or Password incorrect")
+    })
+    
+
 
 app.listen(3000, ()=> {
     console.log("Port 3000 Connected")
